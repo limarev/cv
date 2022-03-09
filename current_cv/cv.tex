@@ -1,359 +1,354 @@
-% !TEX root = cv.tex
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Konstantin Limarev Resume 
-% XeLaTeX Template
-% Version 1.0 (6/9/2020)
-% taken from William Resume/CV
-% XeLaTeX Template
-% Version 1.0 (22/1/2015)
+% FortySecondsCV LaTeX template
+% Copyright © 2019 René Wirnata <rene.wirnata@pandascience.net>
+% Licensed under the 3-Clause BSD License. See LICENSE file for details.
 %
-% This template has been downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Original author:
-% Howard Wilson (https://github.com/watsonbox/cv_template_2004) with
-% extensive modifications by Vel (vel@latextemplates.com)
-%
-% License:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Attributions
+% ------------
+% * fortysecondscv is based on the twentysecondcv class by Carmine Spagnuolo 
+%   (cspagnuolo@unisa.it), released under the MIT license and available under
+%   https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex
+% * further attributions are indicated immediately before corresponding code
 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+%-------------------------------------------------------------------------------
+%                             ADDITIONAL PACKAGES
+%-------------------------------------------------------------------------------
+\documentclass[
+  a4paper, 
+%   showframes,
+   maincolor=cvblue,
+   sectioncolor=cvblue,
+%  subsectioncolor=orange
+%   sidebarwidth=0.4\paperwidth,
+%   topbottommargin=0.03\paperheight,
+%   leftrightmargin=20pt
+]{fortysecondscv}
+
+% improve word spacing and hyphenation
+\usepackage{microtype}
+\usepackage{ragged2e}
+\usepackage{rotating}
+
+% take care of proper font encoding
+\ifxetex
+	\usepackage{fontspec}
+	\defaultfontfeatures{Ligatures=TeX}
+% \newfontfamily\headingfont[Path = fonts/]{segoeuib.ttf} % local font
+\else
+	\usepackage[utf8]{inputenc}
+	\usepackage[T1]{fontenc}
+% \usepackage[sfdefault]{noto} % use noto google font
+\fi
+
+% enable mathematical syntax for some symbols like \varnothing
+\usepackage{amssymb}
+
+% bubble diagram configuration
+\usepackage{smartdiagram}
+\smartdiagramset{
+  % defaut font size is \large, so adjust to harmonize with sidebar layout
+  bubble center node font = \footnotesize,
+  bubble node font = \footnotesize,
+  % default: 4cm/2.5cm; make minimum diameter relative to sidebar size
+  bubble center node size = 0.3\sidebartextwidth,
+  bubble node size = 0.25\sidebartextwidth,
+  distance center/other bubbles = 1.5em,
+  % set center bubble color
+  bubble center node color = maincolor!70,
+  % define the list of colors usable in the diagram
+  set color list = {maincolor!10, maincolor!40,
+  maincolor!20, maincolor!60, maincolor!35},
+  % sets the opacity at which the bubbles are shown
+  bubble fill opacity = 0.8,
+}
 
 
-\documentclass[10pt]{article} % Default font size
+%-------------------------------------------------------------------------------
+%                            PERSONAL INFORMATION
+%-------------------------------------------------------------------------------
+% profile picture
+\cvprofilepic{pics/profile}
+% your name
+\cvname{\LARGE Konstantin Limarev}
+% job title/career
+%\cvjobtitle{Assistant Professor of\\[0.2em] Robotics Engineering}
+% \cvjobtitle{Senior XXXXX XXXXX at\\[0.2em] University of Overleaf}
 
-\input{structure.tex} % Include the file specifying document layout
+% date of birth
+% \cvbirthday{\textbf{Date of Birth}: Sep. X, XXXX}
+% short address/location, use \newline if more than 1 line is required
+\cvlocation{Moscow, Russia}
+% \cvaddress{Blochinceva 7, \newline
+% Dubna, Moscow region,
+% Russia, 141980}
+% phone number
+\cvphone{+79151122565}
+% email address
+\cvmail{offer.limarev@icloud.com}
+\cvlinkedin{in/limarev}
+% personal website
+% \cvsite{\href{https://bit.ly/2JntHee}{\textbf{Google Scholar}: H. El-Hussieny}}
+% pgp key
+% \cvkey{ORCID:0000-0002-2296-616X}{XXXX-YYYY-ZZZZ-MMMM} % put your actual ORCID here in the two brackets
+% add additional information
+% \newcommand{\additional}{some more?}
 
-%----------------------------------------------------------------------------------------
 
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 1st PAGE
+%-------------------------------------------------------------------------------
+% overwrite default icons and order of personal information
+% \renewcommand{\personaltable}{%
+% 	\begin{personal}[0.8em]
+% 		\circleicon{\faKey}      & \cvkey  \\
+% 		\circleicon{\faAt}       & \cvmail \\
+% 		\circleicon{\faGlobe}    & \cvsite \\
+% 		\circleicon{\faPhone}    & \cvphone \\
+% 		\circleicon{\faEnvelope} & \cvaddress \\
+% 		\circleicon{\faInfo}     & \cvbirthday \\
+% 		% add another line
+% 		\circleicon{\faQuestion} & \additional
+% 	\end{personal}
+% }
+
+% add more profile sections to sidebar on first page
+\addtofrontsidebar{
+	% include gosquare national flags from https://github.com/gosquared/flags;
+	% naming according to ISO 3166-1 alpha-2 country codes
+	\graphicspath{{pics/flags/}}
+
+% 	\profilesection{Languages}
+% 		\pointskill{\flag{CN.png}}{Chinese}{5}
+% 		\pointskill{\flag{DE.png}}{German}{3}
+%   	\pointskill{\flag{GB.png}}{English}{3}
+%   	\pointskill{\flag{FR.png}}{French}{3}
+
+	\profilesection{Intro}
+		\skill{\faGraduationCap}{Soft Robotics}
+		\skill{\faGraduationCap}{Robotic Teleoperation}
+		\skill{\faGraduationCap}{Human-Robot Interaction}
+		\skill{\faGraduationCap}{Applied Intelligence}
+		\skill{\faGraduationCap}{Embedded Systems Design}
+
+
+	\profilesection{Skills}
+	\chartlabel{C/C++} \chartlabel{Python} \chartlabel{CUDA}
+    \chartlabel{STL} \chartlabel{ROOT} \chartlabel{GEANT4} \chartlabel{Docker} \\
+    \chartlabel{WireGuard} \chartlabel{garfield++}
+
+}
+
+
+%-------------------------------------------------------------------------------
+%                              SIDEBAR 2nd PAGE
+%-------------------------------------------------------------------------------
+\addtobacksidebar{
+	\profilesection{Short Bio}
+	\aboutme{
+ Dan has served on roughly thirty conference and workshop program committees and served as the Program Chair for PLDI 2018. He has served on the ACM SIGPLAN Executive Committee, the Steering Committee for the ACM / IEEE-CS 2013 Computer Science Curriculum, and the ACM Education Board. He currently serves on the CRA Board.}
+
+	\profilesection{Metrics}
+% 	\chartlabel{Bubble Diagram}
+	\begin{figure}\centering
+		\smartdiagram[bubble diagram]{\large 
+% 			\textcolor{white}{\textbf{Being a}} \\ 
+% 			\textcolor{white}{\textbf{Panda}}, % center bubble	
+			\textcolor{black!90}{h-index}\\
+			\textcolor{black!90}{\Large 4},
+			\textcolor{black!90}{Citations}\\
+			\textcolor{black!90}{25},
+			\textcolor{black!90}{RG Score}\\
+			\textcolor{black!90}{7.32},
+					\textcolor{black!90}{Publications}\\
+			\textcolor{black!90}{17}
+% 			\textcolor{black!90}{Playing},
+% 			\textcolor{black!90}{Chilling}
+		}
+	\end{figure}
+
+% 	\chartlabel{Wheel Chart}
+
+% 	\wheelchart{4em}{2em}{%
+%   	20/3em/maincolor!50/Chill,
+%   	15/3em/maincolor!15/Play,
+%   	30/4em/maincolor!40/Sleep,
+%   	20/3em/maincolor!20/Eat
+% 	}
+% \profilesection{Profiles}
+% \centering
+% \href{https://www.linkedin.com/in/haithamelhussieny/}{\includegraphics[width=0.2\sidebartextwidth]{in.png}}\quad \href{https://www.researchgate.net/profile/Haitham_El-Hussieny}{\includegraphics[width=0.2\sidebartextwidth]{pics/rg.png}}\quad  \href{https://github.com/elhussieny}{\includegraphics[width=0.2\sidebartextwidth]{github.png}}
+	\profilesection{Languages}
+	\barskill{}{\textbf{Arabic} (Mother Tongue)}{100}
+	\barskill{}{\textbf{English} (iBT:86, 2011)}{80}
+	\barskill{}{\textbf{Japanese} (Intro. course, 2016)}{20}
+
+
+	\profilesection{Personal}
+	\begin{memberships}
+ 		\membership{}{  Dan lives with his partner, a global public-health researcher, their two sons, born December 2013 and September 2015, and, because that clearly isn't enough chaos, a dog born some time in 2017. Prior to becoming a proud and obsessed dad, Dan enjoyed playing (poorly) and watching ice hockey, (road) bicycling, hiking, non-fiction, and enjoying good food, beer, and live theatre. Now he usually manages to read one book a month. }
+ 	%	\membership{}{}
+	\end{memberships}
+
+
+}
+
+\addtothirdsidebar{
+\textbf{}\\
+\begin{turn}{-90}\chartlabel{Continuum Robots}\chartlabel{Growing Robots}\chartlabel{Shared Control}\chartlabel{Learning by Demonstrations}\chartlabel{Eye Gaze}\chartlabel{Mobile Robots}\chartlabel{Human-Robot Interaction}\chartlabel{Optimal Control}\end{turn}
+
+}
+
+%-------------------------------------------------------------------------------
+%                         TABLE ENTRIES RIGHT COLUMN
+%-------------------------------------------------------------------------------
 \begin{document}
+% \sidebarwidth=0\paperwidth
+% \newgeometry{right=1cm,left=1cm,bottom=0.1cm,top=1cm}
 
-%----------------------------------------------------------------------------------------
-%	NAME AND CONTACT INFORMATION
-%----------------------------------------------------------------------------------------
+% \vskip30pt
 
-\title{Konstantin Limarev -- Curriculum Vitae} % Print the main header
+% \begin{center}
+%     {\color{cvblue} \Huge Cover Letter}
+% \end{center}
+% \vskip20pt
 
-%------------------------------------------------
-
-\parbox{0.5\textwidth}{ % First block
-\begin{tabbing} % Enables tabbing
-\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-{\bf Address} \> Blochinceva 7,\\ % Address line 1
-\> Dubna, Moscow region, \\ % Address line 2
-\> Russia, 141980 \\ % Address line 3
-%{\bf Date of Birth} \> 7$^{th}$ March 1985 \\ % Date of birth 
-{\bf Nationality} \> Russian % Nationality
-\end{tabbing}}
-\hfill % Horizontal space between the two blocks
-\parbox{0.5\textwidth}{ % Second block
-\begin{tabbing} % Enables tabbing
-\hspace{3cm} \= \hspace{4cm} \= \kill % Spacing within the block
-%{\bf Home Phone} \> +256 777 777 500 \\ % Home phone
-{\bf Date of Birth} \> $11^{th}$ April 1994 \\ % Date of Birth
-{\bf Mobile Phone} \> +7 (915) 112 25 65 \\ % Mobile phone
-{\bf Email} \> \href{mailto:offer.limarev@icloud.com}{offer.limarev@icloud.com} \\ % Email address
-\end{tabbing}}
-
-%----------------------------------------------------------------------------------------
-%	PERSONAL PROFILE
-%----------------------------------------------------------------------------------------
-
-% \section{Personal Profile}
-
-% I am a God fearing, enthusiastic and self-motivated team player with at most attention to detail, accuracy and commitment to high quality. My career objective is to meet new challenges and knowledge with a positive attitude in order to achieve the expected organizational productivity and efficiency.
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Education}
-
-\tabbedblock{08/2018 -}{12/2021}{Ph.D. position - \href{https://www.uni-dubna.ru/}{Department of Nuclear Physics, Dubna State University, Dubna, Russia} 
-
-%\textit{Bachelor thesis `Design of method of measurement of high energy neutrons using proton's recoil method'}
-}
-
-%------------------------------------------------
-
-\tabbedblock{08/2015 -}{08/2018}{Master of Science (Physics) - \href{https://www.uni-dubna.ru/}{Department of Nuclear Physics, Dubna State University, Dubna, Russia} 
-\\\textit{Master thesis `Simulation of GEM and STRAW detectors using garfield++'}
-}
-
-%------------------------------------------------
-
-\tabbedblock{02/2013 -}{08/2015}{Bachelor of Science (Physics) - \href{https://www.uni-dubna.ru/}{Department of Nuclear Physics, Dubna State University, Dubna, Russia} 
-\\\textit{Bachelor thesis `Design of method of measurement of high energy neutrons using proton's recoil method'}
-}
-
-%------------------------------------------------
-
-\tabbedblock{08/2011 -}{01/2013}{Studies at the Department of Problems of Physics and Power Engineering (Physics and Mathematics) - \href{http://mipt.ru}{Moscow Institut of Physics and Technology, MIPT(SU), Dolgoprudny, Russia} 
-}
-
-%------------------------------------------------ 
-
-\tabbedblock{09/2000 -}{06/2011}{Secondary Education - \href{http://lycee6.ru/}{Lyceum 6, Dubna, Russia}
-}
-
-%------------------------------------------------ 
-
-\tabbedblock{09/2007 -}{06/2010}{Music Education (accordion) - \href{http://dmsh-dubna.mo.muzkult.ru/}{Musical school \#1, Dubna, Russia} 
-\\\textit{Finished with excellent certificate }  
-}
-
-
-%----------------------------------------------------------------------------------------
-%	RELEVANT SKILLS
-%----------------------------------------------------------------------------------------
-% \section{Relevant Skills}
-% Neploho ebu tvoyu mamawu
-
-%----------------------------------------------------------------------------------------
-%	LIST OF PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{List of Publications}
-
-\publication{Development of the technique for measuring neutrons spectra during irradiation of thick uranium targets by protons (660 MeV)}
-{
-\textit{Exotic Nuclei, pp. 342-348 (2017)}\\
-\textit{E. O. Saveljeva, E. M. Kozulin, K. V. Novikov, I. V. Vorobyev, A. N. Baranov, I. N. Dyatlov, K. K. Limarev et al.}\\
-\textit{doi:10.1142/9789813226548\_0052}
-}
-
-%------------------------------------------------ 
-\textbf{Certificates}
-
-\tabbedblock{11/2019}{}
-{VIII International GEANT4 School
-\href{https://geant4.web.cern.ch/support/training_courses}
-{\\\textit{Vinca Institute of Nuclear Sciences, Belgrade, Serbia }}  
-}
-%----------------------------------------------------------------------------------------
-%	EMPLOYMENT HISTORY SECTION
-%----------------------------------------------------------------------------------------
-
-\section{Employment History}
-
-\job
-{12/2020 -}{present	}
-{International Aeronavigation Systems Concern, Moscow, Russia}
-{https://www.ians.aero}
-{Quality Assurance Engineer, Junior C/C++ Developer }
-{
-\begin{itemize-noindent}
-\item{Implementation of integration tests using Python}
-\item{Design and implementation of image filters using CUDA API }
-\end{itemize-noindent}
-}
-
-\job
-{02/2018 -}{09/2021	}
-{Dzhelepov Laboratory of Nuclear Problems JINR, Dubna, Russia}
-{https://dlnp.jinr.ru/}
-{Engineer}
-{
-\begin{itemize-noindent}
-\item{Simulation of gaseous detectors in strong electromagnetic fields via \href{https://garfieldpp.web.cern.ch/garfieldpp/}{garfield++}}
-\item{Experimental data processing from STRAW detector}
-\end{itemize-noindent}
-}
-
-\job
-{05/2016 -}{06/2017}
-{University Centre JINR, Dubna, Russia}
-{http://ucnew.jinr.ru/en/}
-{Laboratory Assistant}
-{
-\begin{itemize-noindent}
-\item{Linear accelerator maintenance}
-\end{itemize-noindent}
-}
-
-\job
-{06/2016 -}{07/2017}
-{Bogolubov Laboratory of Theoretical Physics JINR, Dubna, Russia}
-{http://theor.jinr.ru/lab_en.html}
-{Student Research Assistant}
-{
-\begin{itemize-noindent}
-\item{Simulation of collective properties of AuAu reaction via HSD model}
-\end{itemize-noindent}
-}
-
-\job
-{07/2014 -}{07/2015}
-{Flerov Laboratory of Nuclear Reactions JINR, Dubna, Russia}
-{http://flerovlab.jinr.ru}
-{Laboratory Assistant}
-% {I conducted lectures, set, supervised and marked exam for the following courses to Computer Science students (Bachelors and Diploma) in Makerere University Department of Computer Science:
-{
-\begin{itemize-noindent}
-\item{Experimental spectra processing via \href{https://root.cern/}{ROOT CERN} from DEMON detector}
-\item{Inverse problem, Fredholm integral equation, n-g discrimination}
-\item{Implementation on C++ of solving Fredholm integral equation}
-\end{itemize-noindent}
-}
-
-\job
-{09/2012 -}{04/2013}
-{Extramural school, Dolgoprudny, Russia}
-{http://www.school.mipt.ru/}
-{Teacher of physics and mathematics}
-%{I conducted lectures, set, supervised and marked exam for the following courses to Computer Science students in Kampala University School of Computer Science:
-
-%\begin{itemize-noindent}
-%\item{Computer Programming}
-%\item{Computer Literacy}
-%\item{Calculus I}
-%\item{Discrete Mathematics}
-%\end{itemize-noindent}
-%}
-
-
-%----------------------------------------------------------------------------------------
-%	PROJECTS SECTION
-%----------------------------------------------------------------------------------------
-
-% \section{Accomplished Projects}
-
-% \begin{itemize-noindent}
-% \item{I have managed to automate all Roaming, Interconnect and Loyalty Campaign related processes and reporting with in a period of one month after joining Tenotree Corporation}
-% \item{I was part of the team involved in the implementation of UTL Prepaid Commission Model, Churn, Prediction Model and   Micro Segmentation   of   UTL’s   Subscriber base}
-% \item{Implemented a real time raw CDR collector for prepaid UTL customers which resulted into timely, accurate reporting and support for running various promotions (awakening and activation bonus promotions)}
-% \item{Implemented a software solution using Perl to generate notification Tap files for UTL inbound roamers. This saved the company 40000 Euro that was required for regeneration of over 100,000 notification by the Clearing house} 
-% \item{Implemented a software solution using Perl to correct billing information for RAPs (Rejected Tap files for UTL inbound roamers)} 
-% \item{Implemented a raw CDR decoder using Perl for MSC (mobile switch)} 
-% \item{Managed to resolve major Tap file exchange challenges between UTL and Data Clearing House (DCH). This helped the company to recover from huge revenue losses that were caused by files aging before reaching the DCH. This was achieved by implementing a number of controls and quality checks like successful ftp delivery reports} 
-% \item{I was involved in the design, analysis and implementation (using python) of UTL bonus airtime model which came in handy during a number of acquisition campaigns}
-% \item{Implemented the good number algorithm in python for   classification of UTL free number pool}
-% \item{I implemented a Near Real Time Roaming Data Exchange (NRTRDE) solution for roaming fraud detection using python which save UTL over 100,000USD that was to be charged by the vendor to implement the same solution. Solution is still being used by UTL}
-% \end{itemize-noindent}
-
-
-
-%----------------------------------------------------------------------------------------
-%	IT/COMPUTING SKILLS SECTION
-%----------------------------------------------------------------------------------------
-% Key Competencies and Skills
-\section{Software Engineering Skills}
-
-% \skillgroup{Data Science}
 % {
-% \textit{Excellent scripting skills in Python, Shell and Awk for advanced huge data manipulation}\\
-% \textit{Proficient in Machine Learning, Artificial intelligence, Data Mining, Data Warehousing and Data Modeling}\\
-% \textit{Practical knowledge in applying machine learning techniques to implement Forecasting, Classification and Regression tasks}\\
-% \textit{Knowledge of Data Visualization tools like QlickView and Tabluea}\\
-% \textit{Working knowledge in Big Data technologies - Hadoop, Hive, Pig and Flume}\\
-% \textit{Proficient in Microsoft Business Intelligence Suite (SSRS, SSAS and SSIS)}\\
-% \textit{Proficient with Microsoft SQL Server 2008/2012} - database architecture and administration\\
-% \textit{ETL development using SSIS and Talend Open Studio}\\
-% \textit{Clustering for market micro-segmentation and Market Basket Analysis (Association mining)}\\
-% \textit{SQL tunning and designing parallel queries for data definition and manipulation}
 % }
 
 
-%------------------------------------------------
-\skillgroup{Programming and Scripting Languages}
-{
-\textit{MATLAB, Python, Perl, Latex, Shell, CMake, C, C++, CUDA API}
-%\textit{Database Management Systems: Oracle, MSSQL, MySQL, Infobright}\\
+\newpage
+\restoregeometry
+\sidebarwidth=0.35\paperwidth
 
-}
+\makefrontsidebar
 
-\skillgroup{Miscellaneous}
-{
-\textit{Origin, git, JIRA, Confluence, Bitbucket, Docker, VSCode}\\
-\textit{Advanced knowledge in working with Windows and Linux/Unix platforms}\\
-\textit{Proficient in using Microsoft Office suite applications }
-}
+\cvsection{Employment History}
+\begin{cvtable}
+    \cvitem{12/2020 -- present}{\color{cvsectioncolor}\href{https://www.ians.aero}{International Aeronavigation Systems Concern}}{\textbf{Moscow, Russia}}{Quality Assurance Engineer, Junior C/C++ Developer}
+	
+	\cvitem{02/2018 -- 09/2021}{\color{cvsectioncolor}\href{https://dlnp.jinr.ru/}{Dzhelepov Laboratory of Nuclear Problems}}{\textbf{Dubna, Russia}}{Engineer}
+	
+	\cvitem{05/2016 -- 06/2017}{\color{cvsectioncolor}\href{http://ucnew.jinr.ru/en/}{University Centre JINR}}{\textbf{Dubna, Russia}}{Laboratory Assistant}
+	
+	\cvitem{06/2016 -- 07/2017}{\color{cvsectioncolor}\href{http://theor.jinr.ru/lab_en.html}{Bogolubov Laboratory of Theoretical Physics}}{\textbf{Dubna, Russia}}{Student Research Assistant}	
+	
+	\cvitem{07/2014 -- 07/2015}{\color{cvsectioncolor}\href{http://flerovlab.jinr.ru}{Flerov Laboratory of Nuclear Reactions}}{\textbf{Dubna, Russia}}{Laboratory Assistant}
+	
+	\cvitem{09/2012 -- 04/2013}{\color{cvsectioncolor}\href{http://www.school.mipt.ru/}{Extramural school}}{\textbf{Dolgoprudny, Russia}}{Teacher of physics and mathematics}
+\end{cvtable}
 
-%------------------------------------------------
 
-%\skillgroup{Soft Skills}
-{
-%\textit{Proficient in using Microsoft Office suite applications }\\
-%\textit{Excellent communication, leadership, interpersonal and pedagogical skills}\\
-%\textit{Management skills and ability to work with a team }\\
-%\textit{High level of motivation and self-drive}
-}
+\cvsection{Education}
+\subsection{Postgraduate Studies}
+\begin{cvtable}
+	\cvitem{2013 -- 2016}{\color{cvsectioncolor}Ph.D. in Mechatronics and Robotics Engineering}{\href{www.ejust.edu.eg}{\textbf{E-JUST, Egypt}}}
+		{\textbf{Title}: Development of a Cognitive Human-Robot Interaction System for Dexterous Teleoperation.\\
+		\textbf{Supervisors}: Prof. Said Megahed, Dr. Samy Assal, Prof. Ahmed A. Abouelsoud and Prof. Tsukasa Ogasawara.\\
+		\textbf{Grade: }CGPA: 3.78\\
+		\chartlabel{HRI} \chartlabel{Teleoperation} \chartlabel{Shared Control} \chartlabel{Eye Gaze}}
+		
+	\cvitem{2011 -- 2013}{\color{cvsectioncolor}M.Sc. in Mechatronics and Robotics Engineering}{\href{www.ejust.edu.eg}{\textbf{E-JUST, Egypt}}}
+		{\textbf{Title}: Improving Robots Exploration by Heuristic Backtracking in Sensor-based Techniques.\\
+		\textbf{Supervisors}: Dr. M. Abdellatif and Dr. Samy Assal\\
+		\textbf{Grade: }CGPA: 3.5\\
+	\chartlabel{Mobile Robots} \chartlabel{Exploration} \chartlabel{Navigation} \chartlabel{Path Planning}}
+\end{cvtable}
 
-%----------------------------------------------------------------------------------------
-%	LANGUAGES
-%----------------------------------------------------------------------------------------
-\section{Languages}
 
-\skillgroup{English, French, Ukrainian}
-{
-\textit{Intermediate level}\\
-}
+\subsection{Undergraduate Study}
+\begin{cvtable}
+\cvitem{2002 -- 2007}{\color{cvsectioncolor}\small B.Sc. in Electronics and Communications Engineering}{\href{http://bu.edu.eg/en/}{\textbf{Benha Univ., Egypt}}}
+		{\textbf{Prject Title}: A Mototrized Wheelchair for Handicapped.\\
+		\textbf{Supervisors}: Dr. Asharaf Hafez\\
+		\textbf{Grade: } Very Good (Ranked 3rd. among 200 students)}
+	\end{cvtable}
 
-%----------------------------------------------------------------------------------------
-%	INTERESTS
-%----------------------------------------------------------------------------------------
-\section{Interests}
+\subsection{Other Training}
+\begin{cvtable}
+\cvitem{May 2005}{\color{cvsectioncolor}\small Embedded Systems Diploma}{\textbf{Jelecom Co., Egypt}}
+		{Training on microcontrollers: 8051, AVR, PIC and Motorola.}
+	\end{cvtable}
+	
+% 	Ph.D. Theses: (Two students)
+% { . (2018 - 2020)
+% {  (2018 - 2020)
+% M.Sc. Theses: (Two students)
+% { An Intutive Input Interface for teloperation of a Multi-section Continuum Robot. (2019-2021)
+% {  (2019-2021)
+% \newpage
+% \makebacksidebar
+% \cvsection{Teaching Experience}
+% \subsection{Postgraduate Courses}
+% \begin{cvtable}
+% 	\cvitem{E-JUST University}{MTR 601: Intelligent Control Systems}{Fall'18, Spring'19}{Fuzzy Logic Control, Neural Network Control, Evolutionary Algorithms and Genetic Programming.}
+% 	\cvitem{Benha University}{ECE 501: Advanced Embedded Systems}{Fall'16}{Micro-controllers and Microprocessors Applications}
+% % 	\cvitem{Benha University}{ECE 447: Robotics Engineering}{Spring'17, Spring'19}{Robot Structure, Kinematics, Dynamic and Control.}
+% % 	\cvitem{}{ECE 447: Robotics Engineering}{Spring'17, Spring'19}{Robot Structure, Kinematics, Dynamic and Control.}
+% \end{cvtable}
 
-\skillgroup{Basketball}
-{
-\textit{\href{https://vk.com/uni_dubna_basketbol}
-{DSU Basketball League Winner 2017}, 
-\href{https://vk.com/basketkimry}
-{Kimry Basketball League Winner 2018/2019},
-\href{https://play.fiba3x3.com/players/c0b5b2e1-d136-4a33-a60a-1e55667b5ef8/activity}
-{Dubna Business League 3x3 2020},
-\href{https://ablmoscow.ru/team/1384?seasonId=17}
-{ABL Moscow 20/21}}
-}
+% \subsection{Undergradute Courses}
+% \begin{cvtable}
+% \cvitem{Benha University}{ECE 447: Robotics Engineering}{Spring'17, Spring'19}{Robot Structure, Kinematics, Dynamics and Control.}
+% \cvitem{}{ECE 101: Electronics (I)}{Fall'16}{Basic of Electronics: PN Junctions, Diode applications.}
+% \cvitem{}{ECE 102: Electronics (II)}{Spring'17}{LEDs, Optocouplers, Photodiodes and applications.}
+% \cvitem{}{ECE 204: Electrical and Electronic Measurements}{Fall'16, Fall'18}{PMMC, Avometers, Digital Instruments, Sensor and actuators.}
+% \cvitem{ZewailCity University}{SPC 318: System Modeling and Linear Systems}{Fall'18}{Transfer function, State-Space, First and Second Order Systems, Stability Analysis and Root Locus.}
+% \cvitem{YouTube}{\href{https://www.youtube.com/playlist?list=PL_rxK_FJ4p0agYcYRZwa9mbMUvnhesZ4v}{\textbf{Introduction to \LaTeX\, in Arabic}}}{Since Dec 8, 2014}{}
+% 	\end{cvtable}
 
-\skillgroup{Music}
-{Composing and arrengement music, playing covers: 
-\textit{\href{https://vk.com/uni_band_dubna}
-{UniBand group}}
-}
-\skillgroup{Swimming, Traveling}
-%----------------------------------------------------------------------------------------
-%	RESEARCH GROUPS (Membership)
-%----------------------------------------------------------------------------------------
+% \cvsection{Academic Supervision}
+% \begin{cvtable}
+% 	\cvitem{2018--2020}{\small Demonstration-Guided Motion Planning for Continuum Robots}{Ph.D.}{}
+% 	\cvitem{2018--2020}{\small Intelligent Control of Automotive Air-Spring Suspension System.}{Ph.D.}{}
+% 	\cvitem{2019--2020}{\small Intuitive teloperation of Multi-section Continuum Robots.}{M.Sc.}{}
+% 	\cvitem{2019--2020}{\small Autonomous Tasks-around-head Assistance for Patients with Movement Disabilities}{M.Sc.}{}
+% \end{cvtable}
 
-% \section{Research Groups (Membership)}
+% \cvsection{Honours and Awards}
+% \begin{cvtable}
+% 	\cvitem{May 2018}{Award of Research Excellence (10000 EGP)}{Benha Univ., Egypt}{}
+% 		\cvitem{Jan 2017}{Award of Research Excellence (4000 EGP)}{Benha Univ., Egypt}{}
+% 		\cvitem{Sep 2011}{Awarded M.Sc. and Ph.D. Scholarships}{MoHE, Egypt}{}
+% \end{cvtable}
 
-% \interestsgroup{
-% \interest{Artificial Intelligence in the Developing World (AI-Dev)}
-% \interest{TADIG (Transferred Account Data Interchange Group)}
-% \interest{NRTRDE(Near Real Time Roaming Data Exchange)}
-% \interest{Mobile Roaming}
-% \interest{Interconnect/ Inter Carrier/CABS Billing}
-% }
 
-%----------------------------------------------------------------------------------------
-%	REFEREE SECTION
-%----------------------------------------------------------------------------------------
+% \cvsection{Invited Talks}
+% \begin{cvtable}
+% 	\cvitem{Mar 2019}{Entrepreneur Workshop}{E-JUST Univ.}{Gave a two hours lecture on career support and entrepreneurships.}
+% 		\cvitem{May 2009}{Getting Started in Embedded Systems}{Benha Univ.}{Gave a lecture on getting started in embedded systems.}
+% \end{cvtable}
+% \section{Review Duties}
+% \begin{cvtable}
+% 	\cvitem{Journals}{Advanced Robotics, Intelligent Service Robots.}{}{}
+% 	\cvitem{Conferences}{ICRA’17, IROS’18, ICRA’19, ICAR'19.}{}{}
+% \end{cvtable}
 
-% \section{Referees}
+% \cvsection{References}
+% \begin{cvtable}
+% 	\cvitem{Ref. 1}{Prof. XXX CCCC}{EE Univ., Egypt}{xxx[dot]yyy[at]ddd[dot]edu[dot]eg}
+% 			\cvitem{Ref. 2}{Prof. XXX CCCC}{EE Univ., Egypt}{xxx[dot]yyy[at]ddd[dot]edu[dot]eg}
+% 	\cvitem{Ref. 3}{Prof. XXX CCCC}{EE Univ., Egypt}{xxx[dot]yyy[at]ddd[dot]edu[dot]eg}
 
-% \parbox{0.5\textwidth}{ % First block
-% \begin{tabbing}
-% \hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
-% {\bf Name} \> Dr. Washington Okori \\ % Referee name
-% {\bf Company} \> Tech Manhindra\\ % Referee company
-% {\bf Position} \> Director Projects \\ % Referee job title 
-% {\bf Contact} \> Mob: +256 772 712 048 % Referee contact information
-% \end{tabbing}}
-% \hfill % Horizontal space between the two blocks
-% \parbox{0.5\textwidth}{ % Second block
-% \begin{tabbing}
-% \hspace{2.75cm} \= \hspace{4cm} \= \kill % Spacing within the block
-% \> Dr. Ernest Mwebaze\\ % Referee name
-% \> Makerere University \\ % Referee company
-% \> Lecturer \\ % Referee job title 
-% \> Mob: +256 772 121 272 % Referee contact information
-% \end{tabbing}}
+% \end{cvtable}
 
-%----------------------------------------------------------------------------------------
+% \newpage
+% \makethirdsidebar
+% \sidebarwidth=.08\paperwidth
+% \newgeometry{right=1cm,left=2cm,bottom=0.1cm,top=1cm}
 
-\end{document}
+% \cvsection{Publications}
+% \subsection{Journals}
+% 	\begin{itemize}
+% 	{\small
+% 	\item mmm}
+% \end{itemize}
+% \vskip20pt
+%  \subsection{Conferences}
+% \begin{itemize}
+% {\small
+% \item ccc}
+% 		\end{itemize}
+%\end{cvtable}
+
+%\cvsignature
+
+\end{document} 
