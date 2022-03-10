@@ -182,6 +182,10 @@
 % "starred version kills the indentation of the paragraph following the title"
 \titlespacing*{\subsubsection}{0pt}{1ex}{1ex}
 
+% Non-indenting itemize
+\newenvironment{itemize-noindent}
+{\setlength{\leftmargini}{1em}\begin{itemize}}
+{\end{itemize}}
 
 %-------------------------------------------------------------------------------
 %                              SIDEBAR ELEMENTS
