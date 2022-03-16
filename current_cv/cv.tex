@@ -122,24 +122,27 @@
 %   	\pointskill{\flag{GB.png}}{English}{3}
 %   	\pointskill{\flag{FR.png}}{French}{3}
 
-	\profilesection{About}
-	I'm a motivated, adaptable and responsible software engineer seeking a position in an IT company.
-	I care about readable, optimal and reliable code.
+	\profilesection{\MakeUppercase{About}}
+	% Я мотивирван / мотивированный
+	% stress resilent, flexible, initiative, problem solving.... google qualities and skills 
+	Motivated, adaptable and \\ responsible software engineer 
+	cares about readable, optimal and reliable code.
 
 
-	\profilesection{Skills}
+	\profilesection{\MakeUppercase{Skills}}
 	\chartlabel{C/C++} \chartlabel{Python} \chartlabel{CUDA}
     \chartlabel{STL} \chartlabel{Docker} \chartlabel{git} \chartlabel{Agile} \chartlabel{CMake}
+	\chartlabel{Linux} \chartlabel{System Administration} \\
 	\chartlabel{Latex} \chartlabel{MATLAB} \chartlabel{ROOT} \\ 
 	\chartlabel{GEANT4} \chartlabel{garfield++}
 
-	\profilesection{Languages}
-	\textbf{Russian: } native proficiency \\
-	\textbf{English:} full professional working proficiency \\
-	\textbf{French:} intermediate \\
-	\textbf{Ukrainian:} intermediate
+	\profilesection{\MakeUppercase{Languages}}
+	\textbf{Russian}: \textit {native proficiency} \\
+	\textbf{English}: \textit {full professional working proficiency} \\
+	\textbf{French}: \textit {intermediate} \\
+	\textbf{Ukrainian}: \textit {intermediate}
 
-	\profilesection{Interests}
+	\profilesection{\MakeUppercase{Interests}}
 	\textbf{Basketball} \\
 	\textit{
 	\href{https://ablmoscow.ru/team/1384?seasonId=17}{ABL Moscow 20/21}, \\
@@ -236,105 +239,110 @@
 
 \makefrontsidebar
 
-\cvsection{Employment History}
+\cvsection{\MakeUppercase{Experience}}
 \begin{cvtable}
-    \cvitem{12/2020 -- present}{\color{cvsectioncolor}\href{https://www.ians.aero}{International Aeronavigation Systems Concern}}{\textbf{Moscow, Russia}}
-	{\footnotesize\textit{Quality Assurance Engineer, Junior C/C++ Developer}
+    \cvitem{12/2020 -- present}{\color{cvsectioncolor}\href{https://www.ians.aero}{International Aeronavigation Systems Concern}}{{Moscow, Russia}}
+	{\textit{Quality Assurance Engineer, Junior C/C++ Developer}
 	\normalsize 
 	\begin{itemize-noindent}
-		\item Implementation of integration tests using Python
-		\item Design and implementation of image filters using CUDA API
+		\item Began as a QA engineer, then were promoted to C++ developer
+		\item Trained IT automation: git, JIRA, CI/CD, Agile
+		\item Implemented integration tests for our products using Python
+		\item Rewrote image fusion algorithm and designed image filters using CUDA API
+		\item Prepared C++ workshop and collaborated in code review
 	\end{itemize-noindent}
 	}
 	
-	\cvitem{02/2018 -- 09/2021}{\color{cvsectioncolor}\href{https://dlnp.jinr.ru/}{Dzhelepov Laboratory of Nuclear Problems}}{\textbf{Dubna, Russia}}
-	{\footnotesize\textit{Engineer}
+	\cvitem{02/2018 -- 09/2021}{\color{cvsectioncolor}\href{https://dlnp.jinr.ru/}{Dzhelepov Laboratory of Nuclear Problems}}{{Dubna, Russia}}
+	{\textit{Engineer}
 	\normalsize 
 	\begin{itemize-noindent}
-		\item Simulation of gaseous detectors in strong electromagnetic \\ fields via \href{https://garfieldpp.web.cern.ch/garfieldpp/}{garfield++}
-		\item Experimental data processing from STRAW detector
+		\item Volunteered for shift-taking neutron run monitoring at \href{https://www.lanl.gov}{LANL} with the SFGD and US-Japan prototype detectors
+		\item Pioneered the simulation of gaseous detectors STRAW and GEM in strong electromagnetic fields via \href{https://garfieldpp.web.cern.ch/garfieldpp/}{garfield++} in our department
+		\item Collected and processed data from STRAW detectors via ROOT
+		\item Administrated house internal simulations server % Server administration of house internal simulations
 	\end{itemize-noindent}
 	}
 	
-	\cvitem{05/2016 -- 06/2017}{\color{cvsectioncolor}\href{http://ucnew.jinr.ru/en/}{University Centre JINR}}{\textbf{Dubna, Russia}}
-	{\footnotesize\textit{Laboratory Assistant}
+	\cvitem{05/2016 -- 06/2017}{\color{cvsectioncolor}\href{http://ucnew.jinr.ru/en/}{University Centre JINR}}{{Dubna, Russia}}
+	{\textit{Laboratory Assistant}
 	\normalsize
 	\begin{itemize-noindent}
-		\item Linear accelerator maintenance
+		\item Inspected and rebuilt linear accelerator into a study bench for students
 	\end{itemize-noindent}
 	}
 	
-	\cvitem{06/2016 -- 07/2017}{\color{cvsectioncolor}\href{http://theor.jinr.ru/lab_en.html}{Bogolubov Laboratory of Theoretical Physics}}{\textbf{Dubna, Russia}}
-	{\footnotesize\textit{Student Research Assistant}
+	\cvitem{06/2016 -- 07/2017}{\color{cvsectioncolor}\href{http://theor.jinr.ru/lab_en.html}{Bogolubov Laboratory of Theoretical Physics}}{{Dubna, Russia}}
+	{\textit{Student Research Assistant}
 	\normalsize
 	\begin{itemize-noindent}
-		\item Simulation of collective properties of AuAu reaction via HSD model
+		\item Simulated collective properties of AuAu reaction via HSD model
 	\end{itemize-noindent}
 	}	
 	
-	\cvitem{07/2014 -- 07/2015}{\color{cvsectioncolor}\href{http://flerovlab.jinr.ru}{Flerov Laboratory of Nuclear Reactions}}{\textbf{Dubna, Russia}}
-	{\footnotesize\textit{Laboratory Assistant}
+	\cvitem{07/2014 -- 07/2015}{\color{cvsectioncolor}\href{http://flerovlab.jinr.ru}{Flerov Laboratory of Nuclear Reactions}}{{Dubna, Russia}}
+	{\textit{Laboratory Assistant}
 	\normalsize
 	\begin{itemize-noindent}
-		\item Experimental spectra processing via \href{https://root.cern/}{ROOT CERN} from DEMON detector
-		\item Inverse problem, Fredholm integral equation, n-g discrimination
-		\item Implementation on C++ of solving Fredholm integral equation
+		% \item Series of neutron beam experiments for proton spectra studies: DEMON detector, DAQ system
+		\item Measured protons spectra from neutron beam in series of experiments by utilizing DEMON detector and DAQ system
+		\item Implemented an algorithm solving the inverse problem in first approximation using ROOT CERN framework
+		\item Reconstructed a neutron beam spectra from protons spectra by utilizing my algorithm
+		\item Assisted in analysis of experimental data via \href{https://root.cern/}{ROOT CERN} framework
 	\end{itemize-noindent}
 	}
 	
 \end{cvtable}
 
-\cvsection{Certificates}
+\cvsection{\MakeUppercase{Certificates}}
 % \subsection{Postgraduate Studies}
 \begin{cvtable}
-	\cvitem{2022}{\color{cvsectioncolor}\href{https://www.coursera.org/learn/c-plus-plus-white}{MIPT, Yandex, E-Learning Development Fund}}{\textbf{Coursera}}
+	\cvitem{2022}{\color{cvsectioncolor}\href{https://coursera.org/share/5970ae7299dd11f6f621a4bf3c118a5a}{MIPT, Yandex, E-Learning Development Fund}}{{Coursera}}
 		{
-		\footnotesize\textit{C++ development: white belt} \\
+		\textit{C++ development: white belt}
 		\normalsize
-		5 weeks C++ course. \\
-		\chartlabel{C++} \chartlabel{Algorithms}
-		\chartlabel{OOP} \chartlabel{Computer Programming}
-		}
+		\begin{itemize-noindent}
+			\item 5 weeks C++ course.
+		\end{itemize-noindent}
+		
+		} {}
 
-	\cvitem{11/2019}{\color{cvsectioncolor}\href{https://geant4.web.cern.ch/support/training_courses}{Vinca Institute of Nuclear Sciences}}{\textbf{Belgrade, Serbia}}
+	\cvitem{11/2019}{\color{cvsectioncolor}\href{https://geant4.web.cern.ch/support/training_courses}{Vinca Institute of Nuclear Sciences}}{{Belgrade, Serbia}}
 		{
-		\footnotesize\textit{VIII International GEANT4 School} \\
+		\textit{VIII International GEANT4 School}
 		\normalsize
-		Week C++ workshop and GEANT4 sessions. \\
-		\chartlabel{C++} \chartlabel{GEANT4}
-		}
+		\begin{itemize-noindent}
+			\item Week C++ and GEANT4 hands-on sessions.
+		\end{itemize-noindent}
+		} {}
 \end{cvtable}
 
-\cvsection{Education}
+\cvsection{\MakeUppercase{Education}}
 % \subsection{Postgraduate Studies}
 \begin{cvtable}
-	\cvitem{08/2018 -- 12/2021}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University}}{\textbf{Ph.D. position}}
+	\cvitem{08/2018 -- 12/2021}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University - Ph.D. position}}{}
 		{
-		\textbf{Area}: Analysis of systematics in near T2K detector. \\
-		\chartlabel{Python} \chartlabel{GEANT4} \chartlabel{System Administration}
-		}
+		\textbf{Area}: Analysis of systematics in near T2K detector.
+		} {}
 		
-	\cvitem{08/2015 -- 08/2018}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University}}{\textbf{M. Sc. Physics}}
+	\cvitem{08/2015 -- 08/2018}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University - M. Sc. Physics}}{}
 		{
-		\textbf{Thesis}: Simulation of GEM and STRAW detectors using garfield++.\\
+		\textbf{Thesis}: Simulation of GEM and STRAW detectors using garfield++.
 		% \textbf{Supervisors}: Dr. M. Abdellatif and Dr. Samy Assal\\
 		% \textbf{Grade: }CGPA: 3.5\\
-		\chartlabel{C++} \chartlabel{garfield++} \chartlabel{CMake} \chartlabel{Linux} \chartlabel{Bash}
-		}
+		} {}
 
-	\cvitem{02/2013 -- 08/2015}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University}}{\textbf{B. Sc. Physics}}
-		{\textbf{Thesis}: Design of method of measurement of high energy neutrons using proton's recoil method.\\
+	\cvitem{02/2013 -- 08/2015}{\color{cvsectioncolor}\href{https://www.uni-dubna.ru/}{Dubna State University - B. Sc. Physics}}{}
+		{\textbf{Thesis}: Design of method of measurement of high energy neutrons using proton's recoil method.
 		% \textbf{Supervisors}: Dr. Asharaf Hafez\\
 		% \textbf{Grade: } Very Good (Ranked 3rd. among 200 students)
-		\chartlabel{C++} \chartlabel{ROOT} \chartlabel{Linux}
-		}
+		} {}
 
-	\cvitem{08/2011 -- 01/2013}{\color{cvsectioncolor}\href{http://mipt.ru}{Moscow Institute of Physics and Technology}}{\textbf{student}}
+	\cvitem{08/2011 -- 01/2013}{\color{cvsectioncolor}\href{http://mipt.ru}{Moscow Institute of Physics and Technology - student}}{}
 		{\\
 		% \textbf{Supervisors}: Dr. Asharaf Hafez\\
 		% \textbf{Grade: } Very Good (Ranked 3rd. among 200 students)
-		\chartlabel{Physics} \chartlabel{Math}
-		}
+		} {}
 \end{cvtable}
 	
 % 	Ph.D. Theses: (Two students)

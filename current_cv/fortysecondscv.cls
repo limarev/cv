@@ -38,10 +38,12 @@
 
 % pre-define some colors the user can choose from
 \definecolor{cvblue}{HTML}{0E5484}
+\definecolor{cvblack}{HTML}{000000}
 \definecolor{cvgreen}{HTML}{007170}
 \definecolor{cvred}{HTML}{8B0000}
 \definecolor{cvsidecolor}{HTML}{E7E7E7}
 \definecolor{cvsectioncolor}{HTML}{0E5484}
+% \definecolor{cvsectioncolor}{HTML}{000000}
 \definecolor{cvsubsectioncolor}{HTML}{4D4D4D}
 % set default values
 \colorlet{maincolor}{cvblue}
@@ -142,7 +144,7 @@
 \colorlet{iconcolor}{maincolor!90}
 
 % color definitions for TikZ drawings
-\colorlet{wheelchartlabelcolor}{black}
+\colorlet{wheelchartlabelcolor}{blue}
 \colorlet{wheeltextcolor}{black!80!white}
 % color of unfilld skill points / bar / chart label
 \colorlet{skillbg}{black!25}
@@ -168,16 +170,16 @@
 % \titleformat{<command>}[<shape>]{<format>}{<label>}{<sep>}{<before>}[<after>]
 \newcommand*{\cvsection}[1]{\section*{#1}}
 \titleformat{\section}%
-	{\color{sectioncolor}\normalfont\bfseries\LARGE}{}{0pt}{}
+	{\color{sectioncolor}\normalfont\bfseries}{}{0pt}{}
 
 % grey subsection style for right column
 \titleformat{\subsection}%
 	{\color{subsectioncolor}\normalfont\large}{}{0pt}{}
 
 % abuse subsubsection as profilesection in left column
-\newcommand*{\profilesection}[1]{\subsubsection*{#1}}
+\newcommand*{\profilesection}[1]{\subsubsection*{\textbf{#1}}}
 \titleformat{\subsubsection}
-	{\color{pseccolor}\normalfont\huge}{}{0pt}{\color{pseccolor}\sectionline}
+	{\color{pseccolor}\normalfont}{}{0pt}{\color{pseccolor}\sectionline}
 % set spaces before and after profilesections: <left><before><after>
 % "starred version kills the indentation of the paragraph following the title"
 \titlespacing*{\subsubsection}{0pt}{1ex}{1ex}
@@ -324,7 +326,8 @@
 	  	inner xsep=1ex, % distance from left/right border to text
 	  	inner ysep=0.75ex, % distance top/bottom border to text
 	  	text height=1.5ex, % align text vertically in box (at least as resulting
-	  	text depth=.25ex   % effect)
+	  	text depth=.25ex,   % effect)
+		text=cvsectioncolor
   	]{#1};%
 	\end{tikzpicture}
 }
@@ -529,14 +532,14 @@
 % |                <longer description>              |
 % or, if description is empty:
 % | <date>         <title>       \hfill  <location>  |
-\newcommand{\cvitem}[4]{%
+\newcommand{\cvitem}[5]{%
 	\parbox[t]{0.25\textwidth}{\raggedright #1} &%
 	\parbox[t]{0.75\textwidth}{%
 		\if\relax\detokenize{#4}\relax%
-			\parbox[t]{\linewidth-\widthof{#3}-1em}{\raggedright #2}%
-  		\hfill {\footnotesize#3}%
+		\parbox[t]{\linewidth-\widthof{#3}-1em}{\raggedright #2}%
+  		\hfill {#3}%
 		\else%
-			\textbf{#2} \hfill {\footnotesize#3} \\ #4\vspace{\parsep}%
+			\textbf{#2} \hfill {#3} \\ #4\vspace{\parsep}%
 		\fi%
 	}\\
 }
