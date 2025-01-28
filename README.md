@@ -31,12 +31,16 @@ conﬂicts and roadblocks
 * Rewrote build agent pipeline using CMake presets
 * Refactored legacy code using C++20 and STL
 
-### C++ Developer, QA engineer
+### C++/CUDA Developer, QA engineer
 *International Aeronavigation Systems Concern, Moscow, 12/2020 - 05/2022*
+* Developed, maintained, and optimized CUDA kernels and applications
+* Implemented CFAR algorithms, high/low pass image filters, resampling, BLAS library
+* Strong understanding of CUDA concepts, GPU internals, shared memory, kernel dispatcher
+* Rewrote image fusion algorithm and designed image filters using CUDA API
+* Benchmarked and profiled applications to identify performance bottlenecks and suggest improvements
 * Began as a QA engineer, then were promoted to C++ developer
 * Trained IT automation: git, JIRA, CI/CD, Agile
 * Implemented integration tests for our products using Python
-* Rewrote image fusion algorithm and designed image filters using CUDA API
 * Prepared C++ workshop and collaborated in code review
 
 ### Engineer
