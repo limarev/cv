@@ -21,10 +21,12 @@ up goals and develop their careers, conducting performance
 assessments, creating and maintaining continuous feedback
 culture, keeping good relationships within the team, preventing
 conﬂicts and roadblocks
-* Implemented cross platform IRM SDK using MIP SDK, RMS SDK
-* Implemented cross platform IRM SDK using Crypto API 2.0
+* Implemented cross platform IRM SDK for desktop and mobile platforms
+* Strong understanding MIP SDK, RMS SDK and Crypto API 2.0
+* Wrapping C++ code through JNI
+* Using SWIG for wrappers generation
 * Integrated CryptoPro 5.0 with IRM SDK
-* Integrated Conan 1.x with project
+* Integrated Conan 1.x/2.x with project
 * Developed OLE Storage parser
 * Developed and maintained IRM Libre Office Addon
 * Made project migrating from make to CMake build system
